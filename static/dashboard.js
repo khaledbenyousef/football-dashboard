@@ -84,3 +84,41 @@ function buildChart(teams) {
     }
   });
 }
+// Fetch scorers from our new Flask route
+fetch("/api/scorers")
+  .then(response => response.json())
+  .then(players => {
+    buildScorers(players);
+  });
+
+function buildScorers(players) {
+  const container = document.getElementById("scorers-container");
+
+  // .map() transforms every item in an array into something new
+  // here we turn each player object into an HTML string
+  const rows = players.map((player, index) => `
+    <div class="scorer-row">
+      <div class="scorer-rank">${index + 1}</div>
+      <div class="scorer-info">
+        <div class="scorer-name">${player.name}</div>
+        <div class="scorer-team">
+          <img class="crest" src="${player.crest}" style="width:16px;height:16px;" />
+          ${player.team}
+        </div>
+      </div>
+      <div class="scorer-stats">
+        <div class="stat-box">
+          <div class="stat-value">${player.goals}</div>
+          <div class="stat-label">Goals</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">${player.assists}</div>
+          <div class="stat-label">Assists</div>
+        </div>
+      </div>
+    </div>
+  `);
+
+  // .join("") merges the array of strings into one big HTML string
+  container.innerHTML = rows.join("");
+}

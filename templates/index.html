@@ -13,17 +13,24 @@
     <p>Live standings — 2025/26 season</p>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>Standings table</h2>
-      <div id="table-container">Loading...</div>
-    </section>
+ <main>
+  <section class="card">
+    <h2>Standings table</h2>
+    <div id="table-container">Loading...</div>
+  </section>
 
+  <div class="two-col">
     <section class="card">
       <h2>Points by team</h2>
       <canvas id="points-chart"></canvas>
     </section>
-  </main>
+
+    <section class="card">
+      <h2>Top scorers</h2>
+      <div id="scorers-container">Loading...</div>
+    </section>
+  </div>
+</main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="/static/dashboard.js"></script>
