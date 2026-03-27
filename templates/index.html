@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premier League Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Premier League Dashboard</h1>
+    <p>Live standings — 2025/26 season</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Standings table</h2>
+      <div id="table-container">Loading...</div>
+    </section>
+
+    <section class="card">
+      <h2>Points by team</h2>
+      <canvas id="points-chart"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
